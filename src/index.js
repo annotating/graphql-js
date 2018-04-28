@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { GraphQLServer } = require('graphql-yoga')
 const { Prisma } = require('prisma-binding')
 const Query = require('./resolvers/Query')
@@ -5,6 +6,8 @@ const Mutation = require('./resolvers/Mutation')
 const AuthPayload = require('./resolvers/AuthPayload')
 const Subscription = require('./resolvers/Subscription')
 const Feed = require('./resolvers/Feed')
+
+const SECRET = process.env.SECRET;
 
 const resolvers = {
   Query,
@@ -21,8 +24,8 @@ const server = new GraphQLServer({
     ...req,
     db: new Prisma({
       typeDefs: 'src/generated/prisma.graphql',
-      endpoint: '__PRISMA_ENDPOINT__',
-      secret: 'mysecret123',
+      endpoint: 'https://us1.prisma.sh/public-dandystalker-894/hackernews-node/dev',
+      secret: SECRET,
       debug: true,
     }),
   }),

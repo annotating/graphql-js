@@ -7,5 +7,8 @@ stage: dev
 # Points to the file that holds your data model
 datamodel: datamodel.graphql
 
+
 # You can only access the API when providing JWTs that are signed with this secret
 secret: mysecret123
+
+cluster: public-dandystalker-894/prisma-us1

@@ -146,6 +146,10 @@ input LinkSubscriptionWhereInput {
   """
   OR: [LinkSubscriptionWhereInput!]
   """
+  Logical NOT on all given filters combined by AND.
+  """
+  NOT: [LinkSubscriptionWhereInput!]
+  """
   The subscription event gets dispatched when it's listed in mutation_in
   """
   mutation_in: [MutationType!]
@@ -225,6 +229,10 @@ input LinkWhereInput {
   Logical OR on all given filters.
   """
   OR: [LinkWhereInput!]
+  """
+  Logical NOT on all given filters combined by AND.
+  """
+  NOT: [LinkWhereInput!]
   id: ID
   """
   All values that are not equal to given value.
@@ -413,12 +421,12 @@ type Mutation {
   upsertLink(where: LinkWhereUniqueInput!, create: LinkCreateInput!, update: LinkUpdateInput!): Link!
   upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
   upsertVote(where: VoteWhereUniqueInput!, create: VoteCreateInput!, update: VoteUpdateInput!): Vote!
-  updateManyLinks(data: LinkUpdateInput!, where: LinkWhereInput!): BatchPayload!
-  updateManyUsers(data: UserUpdateInput!, where: UserWhereInput!): BatchPayload!
-  updateManyVotes(data: VoteUpdateInput!, where: VoteWhereInput!): BatchPayload!
-  deleteManyLinks(where: LinkWhereInput!): BatchPayload!
-  deleteManyUsers(where: UserWhereInput!): BatchPayload!
-  deleteManyVotes(where: VoteWhereInput!): BatchPayload!
+  updateManyLinks(data: LinkUpdateInput!, where: LinkWhereInput): BatchPayload!
+  updateManyUsers(data: UserUpdateInput!, where: UserWhereInput): BatchPayload!
+  updateManyVotes(data: VoteUpdateInput!, where: VoteWhereInput): BatchPayload!
+  deleteManyLinks(where: LinkWhereInput): BatchPayload!
+  deleteManyUsers(where: UserWhereInput): BatchPayload!
+  deleteManyVotes(where: VoteWhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -584,6 +592,10 @@ input UserSubscriptionWhereInput {
   """
   OR: [UserSubscriptionWhereInput!]
   """
+  Logical NOT on all given filters combined by AND.
+  """
+  NOT: [UserSubscriptionWhereInput!]
+  """
   The subscription event gets dispatched when it's listed in mutation_in
   """
   mutation_in: [MutationType!]
@@ -660,6 +672,10 @@ input UserWhereInput {
   Logical OR on all given filters.
   """
   OR: [UserWhereInput!]
+  """
+  Logical NOT on all given filters combined by AND.
+  """
+  NOT: [UserWhereInput!]
   id: ID
   """
   All values that are not equal to given value.
@@ -967,6 +983,10 @@ input VoteSubscriptionWhereInput {
   """
   OR: [VoteSubscriptionWhereInput!]
   """
+  Logical NOT on all given filters combined by AND.
+  """
+  NOT: [VoteSubscriptionWhereInput!]
+  """
   The subscription event gets dispatched when it's listed in mutation_in
   """
   mutation_in: [MutationType!]
@@ -1047,6 +1067,10 @@ input VoteWhereInput {
   Logical OR on all given filters.
   """
   OR: [VoteWhereInput!]
+  """
+  Logical NOT on all given filters combined by AND.
+  """
+  NOT: [VoteWhereInput!]
   id: ID
   """
   All values that are not equal to given value.
